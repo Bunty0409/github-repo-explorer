@@ -9,25 +9,18 @@ import {
 } from "@mui/material";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { formatDistanceToNow } from "date-fns";
-
-interface RepoCardProps {
-  repo: any;
-  onExpand: () => void;
-  isExpanded: boolean;
-}
+import type { RepoCardProps } from "../types/types";
 
 const RepoCard: React.FC<RepoCardProps> = ({ repo, onExpand, isExpanded }) => {
   return (
     <Card variant="outlined" sx={{ mb: 2 }}>
       <CardContent sx={{ display: "flex", alignItems: "center" }}>
-        {/* Column 1: Avatar */}
         <Avatar
           src={repo.owner.avatar_url}
           alt={repo.owner.login}
           sx={{ width: 48, height: 48, mr: 2 }}
         />
 
-        {/* Column 2: Info (grows to fill space) */}
         <Box sx={{ flexGrow: 1, minWidth: 0 }}>
           <Typography variant="h6" noWrap>
             {repo.name}
@@ -56,7 +49,6 @@ const RepoCard: React.FC<RepoCardProps> = ({ repo, onExpand, isExpanded }) => {
           </Box>
         </Box>
 
-        {/* Column 3: Chevron aligned to end */}
         <IconButton onClick={onExpand} sx={{ ml: 2 }}>
           <ChevronRightIcon
             sx={{

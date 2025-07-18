@@ -1,6 +1,4 @@
-// src/api/apiEndpoints.ts
-
-const BASE_URL = 'https://api.github.com';
+export const BASE_URL = 'https://api.github.com';
 
 const apiEndpoints = {
   analytics: (owner: string, repo: string) => ({

@@ -1,10 +1,10 @@
-// src/app/store.ts
 import { configureStore } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
 import reposReducer from '../features/repos/reposSlice';
 import analyticsReducer from '../features/analytics/analyticsSlice';
 import rootSaga from './rootSaga';
 
+// Create an instance of Redux Saga middleware
 const sagaMiddleware = createSagaMiddleware();
 
 export const store = configureStore({
@@ -13,6 +13,7 @@ export const store = configureStore({
         analytics: analyticsReducer,
     },
     middleware: (getDefaultMiddleware) =>
+        // Disable Redux Thunk and apply Redux Saga middleware
         getDefaultMiddleware({ thunk: false }).concat(sagaMiddleware),
 });
 

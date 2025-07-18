@@ -1,13 +1,6 @@
-// src/features/analytics/analyticsSlice.ts
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-
-
-interface AnalyticsState {
-    data: Record<string, any>;
-    loading: boolean;
-    error: string | null;
-}
+import type { AnalyticsState } from '../../types/types';
 
 const initialState: AnalyticsState = {
     data: {},
@@ -24,7 +17,6 @@ const analyticsSlice = createSlice({
         },
         fetchAnalyticsSuccess(state, action: PayloadAction<any>) {
             const key = `${action.payload.owner}/${action.payload.repo}`;
-            console.log("key", key);
             state.data[key] = action.payload;
             state.loading = false;
         },

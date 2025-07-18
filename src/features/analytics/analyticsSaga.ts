@@ -1,4 +1,3 @@
-// src/features/analytics/analyticsSaga.ts
 import { call, put, takeLatest, all, delay } from 'redux-saga/effects';
 
 import {
@@ -34,8 +33,6 @@ function* fetchWithRetry(url: string, retries = 10, waitMs = 2000): any {
 // Main worker saga
 function* fetchAnalyticsWorker(action: ReturnType<typeof fetchAnalyticsRequest>): any {
   const { owner, repo } = action.payload;
-
-  console.log("Fetching analytics for:", owner, repo);
 
   try {
     const { commitActivity, codeFrequency, contributors } = apiEndpoints.analytics(owner, repo);

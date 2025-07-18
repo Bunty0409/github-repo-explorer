@@ -1,4 +1,3 @@
-// src/components/RepoAnalytics.tsx
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAnalyticsRequest } from "../features/analytics/analyticsSlice";
@@ -8,17 +7,7 @@ import HighchartsReact from "highcharts-react-official";
 import Highcharts from "highcharts";
 import { format } from "date-fns";
 import { Skeleton } from "@mui/material";
-
-interface Props {
-  owner: string;
-  repoName: string;
-}
-
-type CustomTooltipContext = {
-  x?: string | number;
-  y?: number;
-  series: { name: string };
-};
+import type { Props, CustomTooltipContext } from "../types/types";
 
 const RepoAnalytics: React.FC<Props> = ({ owner, repoName }) => {
   const dispatch = useDispatch();

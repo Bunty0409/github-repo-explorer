@@ -1,15 +1,6 @@
-// src/features/repos/reposSlice.ts
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-
-
-interface RepoState {
-  list: any[];
-  loading: boolean;
-  error: string | null;
-  timeRange: '1week' | '2weeks' | '1month';
-  page: number;
-}
+import type { RepoState } from '../../types/types'; // Adjust the import path as necessary
 
 const initialState: RepoState = {
   list: [],
