@@ -6,6 +6,7 @@ import {
   Avatar,
   Box,
   IconButton,
+  Link,
 } from "@mui/material";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { formatDistanceToNow } from "date-fns";
@@ -22,9 +23,11 @@ const RepoCard: React.FC<RepoCardProps> = ({ repo, onExpand, isExpanded }) => {
         />
 
         <Box sx={{ flexGrow: 1, minWidth: 0 }}>
-          <Typography variant="h6" noWrap>
-            {repo.name}
-          </Typography>
+          <Link href={repo.html_url} target="_blank" underline="none">
+            <Typography variant="h6" noWrap>
+              {repo.name}
+            </Typography>
+          </Link>
           <Typography variant="body2" color="text.secondary" noWrap>
             {repo.description}
           </Typography>
