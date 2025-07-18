@@ -24,7 +24,17 @@ const RepoCard: React.FC<RepoCardProps> = ({ repo, onExpand, isExpanded }) => {
 
         <Box sx={{ flexGrow: 1, minWidth: 0 }}>
           <Link href={repo.html_url} target="_blank" underline="none">
-            <Typography variant="h6" noWrap>
+            <Typography
+              noWrap
+              sx={{
+                fontSize: {
+                  xs: "1rem",
+                  sm: "1.1rem",
+                  md: "1.25rem",
+                },
+                fontWeight: 600,
+              }}
+            >
               {repo.name}
             </Typography>
           </Link>
