@@ -1,8 +1,8 @@
 import axios from "axios";
 import { BASE_URL } from "./apiEndpoints";
 
-const token = import.meta.env.VITE_GITHUB_TOKEN;
-// const token = "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";
+// const token = import.meta.env.VITE_GITHUB_TOKEN;
+const token = "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";
 
 
 const axiosInstance = axios.create({
